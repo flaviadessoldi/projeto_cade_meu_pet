@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Cadê meu Pet?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Roboto+Slab:700|Roboto:400,400i"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./assets/style.css" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&callback=initMap"
+    type="text/javascript"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&libraries=places&callback=initMap" async defer></script>
+
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&libraries=places"></script>
+</head> -->
+
+<body>
+    <body>
+        <nav class="navegacao">
+            <div class="navegacao__box container">
+                <div class="navegacao__itens" id="menuResponsivo">
+                    <div class="navegacao__nav">
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                           
+                            <li>
+                                <a href="index.html#fale-conosco" >Fale Conosco</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="principal">
+                <h1 class="principal__titulo">Perdeu seu Pet?</h1>
+                <h2 class="principal__sub">Preencha o formulário com todas as informações sobre o seu Pet incluindo a foto mais recente que tiver! Não se esqueça de preencher com seus dados de contato, caso alguém encontrou o seu Pet, poderá falar diretamente com você!</h2>
+                <br>
+             
+    </header>
+
+
+    <div class= 'dados-pet'>
+            <form action="" class="message__form">
+                    <div class="message__form-group">
+                        <label for="messageInputPetName" class="message__label">Nome do Pet</label>
+                        <input type="name" class="name__input" id="loginInputEmail" placeholder="Nome do seu Pet">
+                    </div>
+                    <div class="message__form-group">
+                            <label for="messageInputEmail" class="message__label">Espécie</label>
+                            <select id=especie>
+                                    <option>Espécie</option>
+                                    <option>Cachorro</option>
+                                    <option>Gato</option>
+                                    <option>Outro</option>
+                                </select>
+                    </div>
+
+                    <div class="message__form-group">
+                            <label for="messageInputSexo" class="message__label">Sexo</label>
+                            <select id=especie>
+                                    <option>Fêmea</option>
+                                    <option>Macho</option>
+                                    
+                            </select>
+                    </div>
+
+                    <div class="message__form-group">
+                            <label for="messageInputEmail" class="message__label">Raça</label>
+                            <input type="text" class="login__input" id="loginInputRaca" placeholder="Raça do Pet">
+                        </div>
+
+                        <div class="message__form-group">
+                                <label for="messageInputEmail" class="message__label">Idade</label>
+                                <input type="text" class="login__input" id="loginInputIdade" placeholder="Idade do Pet">
+                         </div>                     
+                         <div class="message__form-group">
+                                <label for="messageInputFoto" class="message__label">Foto do Pet</label>
+                                <input type="file" class="login__input" id="loginInputFoto" placeholder="Foto do Pet">
+                         </div>  
+                                            
+                        <div class="message__form-group">
+                        <label for="messageInputText" class="message__label">Visto pela última vez na Data:</label>
+                        <input type="date" class="message__form-group">
+                      </div>
+                      <div class="message__form-group">
+                            <label for="messageInputText" class="message__label">Visto pela última vez no local:</label>
+                            <input type= 'search' id='local'>
+                            
+                          </div>
+                   
+                          <div>
+                                  <button class="principal__btn btn btn_pet" id="btn-search">Enviar</button>
+                              </div>
+                </form>
+
+                                       
+            </div>
+            
+            <div class= 'mapa-perdi' id="map"></div>
+       
+
+                
+            <!-- <<rodape>> -->
+
+	<footer class="rodape">
+		<div class="rodape__principal">
+			<ul class="rodape__navegacao">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+			</ul>
+						
+		</div>
+		<div class="rodape__cc">
+			<p>Creative Commons 2019 | Desenvolvido por Flávia Dessoldi </p>
+		</div>
+	</footer>
+
+	<script src="js/script.js"></script>
+</body>
+
+</html>

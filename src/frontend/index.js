@@ -8,39 +8,6 @@ fetch(`http://localhost:3000/cademeupet`)
     data.forEach(pet => {
       console.log(pet)
 
-      //     const mediaItem = document.createElement('div');
-      //     mediaItem.setAttribute('class', 'media mb-4');
-      //     mediaItem.innerHTML = `
-      //     <img src="${prato.imagem}" alt="${prato.nome}" class="mr-3 img-thumbnail" width="200px">
-      //     <div class="media-body>
-      //         <h5 class="mt-0"><strong>${prato.nome}</strong></h5>
-      //         ${prato.descricao}
-      //       </div>`
-      //       container.appendChild(mediaItem);
-      //       const buttonDelete = document.createElement("button")
-      //       buttonDelete.textContent = "Remover"
-      //       buttonDelete.setAttribute("class", "btn btn-info")
-      //       buttonDelete.setAttribute("data-id", prato._id)
-      //       mediaItem.appendChild(buttonDelete)
-
-      //       buttonDelete.addEventListener("click", () =>{
-      //         fetch(
-      //           `http://localhost:3000/comidas/${prato._id}`,
-      //           {
-      //             method: 'DELETE',
-      //             headers: {
-      //               'Content-Type': 'application/json'
-      //             }
-      //           }
-      //         ).then((response) => {
-      //           console.log(response)
-      //           if(response.status === 204) {
-      //             window.location.reload()
-      //           } else {
-      //             window.alert("Deu erro ao deletar, sorry")
-      //           }
-      //         })
-      //       })
     })
   })
   .catch((erro) => {

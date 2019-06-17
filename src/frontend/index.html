@@ -37,18 +37,17 @@
 			});
 		});
 	</script>
-	<script src="../script.js"></script>
 	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&libraries=places"></script>
-<script>
-// var publicConfig = {
-//   key: 'AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU',
-//   stagger_time:       1000, // for elevationPath
-//   encode_polylines:   false,
-//   secure:             true, // use https
-//   proxy:              'http://127.0.0.1:9999' // optional, set a proxy for HTTP requests
-// };
-// var gmAPI = new GoogleMapsAPI(publicConfig);
+<script>	
+var publicConfig = {
+  key: 'AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU',
+  stagger_time:       1000, // for elevationPath
+  encode_polylines:   false,
+  secure:             true, // use https
+  proxy:              'http://127.0.0.1:9999' // optional, set a proxy for HTTP requests
+};
+var gmAPI = new GoogleMapsAPI(publicConfig);
 
 
 let map;
@@ -121,16 +120,16 @@ createMarker(local)
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Fale Conosco</a>
+					<a class="nav-link" href="#fale-conosco">Fale Conosco</a>
 				</li>
 			</ul>
 			</div>
 	</nav>
 
-	<header class="header">
+	<header class="header" id="home">
 		<div class="container">
 			<div class="card mb-3">
 				<img src="./img/banner.png" class="card-img-top" alt="banner">
@@ -179,7 +178,7 @@ createMarker(local)
 
 
 			<div class="card-body">
-				<!-- <h2 class="card-title">Perdeu ou encontrou um Pet?</h2> -->
+				
 				<h3 class="card-text">Cadastre-se </h3>
 
 				<form>
@@ -318,30 +317,33 @@ createMarker(local)
 										<label for="formGroupExampleInput">Raça do Pet Encontrado</label>
 										<input type="text" class="form-control" id="racaPetEncontrado"
 											placeholder="Qual a raça do Pet que você encontrou?">
-										<label for="form-check-input">Gênero do Pet Encontrado</label>
+										<label for="formGroupExampleInput">Gênero do Pet Encontrado</label>
 										<input type="text" class="form-control" id="generoPetEncontrado"
 											placeholder="O Pet encontrado é fêmea ou macho">
-										<label for="exampleInputEmail1">Idade Aparente do Pet</label>
-										<input type="email" class="form-control" id="idadePetEncontrado"
+										<label for="formGroupExampleInput">Idade Aparente do Pet</label>
+										<input type="text" class="form-control" id="idadePetEncontrado"
 											aria-describedby="emailHelp"
 											placeholder="Qual idade o Pet que você encontrou parece ter?">
-										<label for="exampleInputEmail1">Cor do Pet Encontrado</label>
-										<input type="email" class="form-control" id="corPetEncontrado"
+										<label for="formGroupExampleInput">Cor do Pet Encontrado</label>
+										<input type="text" class="form-control" id="corPetEncontrado"
 											aria-describedby="emailHelp"
 											placeholder="Qual a cor do Pet que você encontrou?">
 									</div>
 									<div class="form-group">
-										<label for="exampleInputPassword1">Outras Características sobre o Pet
+										<label for="formGroupExampleInput">Outras Características sobre o Pet
 											Encontrado</label>
-										<input type="password" class="form-control" id="caracteristicasPetEncontrado"
+										<input type="text" class="form-control" id="caracteristicasPetEncontrado"
 											placeholder="Características do Pet que você encontrou">
 									</div>
 									<div class="form-group">
 										<label for="exampleFormControlFile1">Foto do Pet Encontrado</label>
 										<input type="file" class="form-control-file" id="fotoPetEncontrado">
 									</div>
-									<p>Data que o Pet foi encontrado: <input type="text" id="calendario" /></p>
-
+									<p>Data em que o Pet foi encontrado: <input type="text" id="calendario" /></p>
+									<label for="exampleFormControlFile1">Local em que o Pet foi Encontrado</label>
+									<input type="text" class="form-control-file" id="localPetEncontrado">
+									
+									<div id="map"></div>
 
 									<button type="button" class="btn btn-dark btn-lg"
 										style="background-color:  rgb(228, 83, 17)"
@@ -349,7 +351,6 @@ createMarker(local)
 							</form>
 						</div>
 
-						<div id="map"></div>
 					</div>
 				</div>
 		</section>
@@ -414,11 +415,6 @@ createMarker(local)
 			<p>Creative Commons 2019 | Desenvolvido por Flávia Dessoldi </p>
 		</div>
 	</footer>
-
-
-
-
-
 
 </body>
 

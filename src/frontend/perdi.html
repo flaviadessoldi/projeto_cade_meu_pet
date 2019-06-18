@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cadê meu Pet?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Roboto+Slab:700|Roboto:400,400i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#calendario").datepicker({
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#calendario2").datepicker({
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+            });
+        });
+    </script>
+
+    <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&amp;sensor=false"></script>
+
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&libraries=places"></script>
+
+
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper orange darken-3">
+            <a href="#!" class="brand-logo"></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#cade-meu-pet">Como funciona?</a></li>
+              <li><a href="index.html#fale-conosco">Fale Conosco</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+    <div class="container">
+        <div class="card mb-3">
+            <img src="./img/banner2.png" class="card-img-top" alt="banner">
+
+            <div class="card-body">
+                <h2 class="card-text">Perdeu seu Pet?</h2>
+                <h4 class="card-text">Preencha o formulário com todas as informações sobre seu Pet, incluindo
+                    uma foto e clique em enviar! </h4>
+                <div class="card-body">
+                    <form>
+                        <div class="col-7">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Nome do Pet</label>
+                                <input type="text" class="form-control" id="nomePet" placeholder="Nome do seu Pet">
+                                <label for="form-check-input">Espécie do Pet</label>
+                                <input type="text" class="form-control" id="especiePet"
+                                    placeholder="Seu Pet é um cahorro, um gato ou outra espécie de animal?">
+                                <label for="formGroupExampleInput">Raça</label>
+                                <input type="text" class="form-control" id="racaPet"
+                                    placeholder="Qual a raça do seu Pet?">
+                                <label for="form-check-input">Gênero do Pet</label>
+                                <input type="text" class="form-control" id="generoPet"
+                                    placeholder="Seu Pet é macho ou fêmea?">
+                                <label for="exampleInputEmail1">Idade do Pet</label>
+                                <input type="text" class="form-control" id="idadePet"
+                                    placeholder="Qual a idade do seu Pet?">
+                                <label for="exampleInputEmail1">Cor do Pet</label>
+                                <input type="text" class="form-control" id="corPet"
+                                    placeholder="Qual a cor do seu Pet?">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Outras Características do meu Pet</label>
+                                <input type="text" class="form-control" id="caracteristicasPet"
+                                    placeholder="Características do seu Pet que podem ajudar a encontra-lo.">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Foto do seu Pet</label>
+                                <input type="file" class="form-control-file" id="fotoPet">
+                            </div>
+                            <label>Data em que o Pet foi visto pela última vez: <input type="text" id="calendario2" placeholder="Data em que seu Pet foi visto pela última vez"/>
+                            </label>
+                            <form method="post" action="" id="">
+                                <fieldset>
+
+                                    <div>
+                                        <label for="txtEndereco">Local em que o Pet foi visto pela última vez:</label>
+                                        <input type="text" id="localPet" name="txtEndereco" />
+                                    </div>
+                                    <div>
+                                        <input type="button" id="btnEndereco" name="btnEndereco"
+                                            value="Mostrar no mapa" />
+                                    </div>
+
+                                    <div id="mapa" style="height: 500px; width: 500px">
+                                    </div>
+
+                                    <input type="hidden" id="txtLatitude" name="txtLatitude" />
+                                    <input type="hidden" id="txtLongitude" name="txtLongitude" />
+                                </fieldset>
+                            </form>
+                        </form>
+                        <button class="btn waves-effect orange darken-3" type="submit" name="action">
+                            <i class="material-icons center">Enviar!</i>
+                          </button>
+                </div>
+            </div>
+        </div>
+        <script src="../mapa.js"></script>
+    </body>
+    </html>

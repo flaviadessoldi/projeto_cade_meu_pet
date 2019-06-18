@@ -10,137 +10,41 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
-	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-	<script>
-		$(function () {
-			$("#calendario").datepicker({
-				dateFormat: 'dd/mm/yy',
-				dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
-				dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-				dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-				monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-				monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
-			});
-		});
-	</script>
-	<script>
-		$(function () {
-			$("#calendario2").datepicker({
-				dateFormat: 'dd/mm/yy',
-				dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
-				dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-				dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-				monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-				monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
-			});
-		});
-	</script>
-	<script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&libraries=places"></script>
-<script>	
-var publicConfig = {
-  key: 'AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU',
-  stagger_time:       1000, // for elevationPath
-  encode_polylines:   false,
-  secure:             true, // use https
-  proxy:              'http://127.0.0.1:9999' // optional, set a proxy for HTTP requests
-};
-var gmAPI = new GoogleMapsAPI(publicConfig);
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-
-let map;
-let service;
-let infowindow;
-let marker;
-
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat:-23.66389, lng:-46.53833},
-      zoom: 14
-    });
-
-
-  let santoAndre = new google.maps.LatLng(-23.66389, -46.53833);
-
-  infowindow = new google.maps.InfoWindow();
-
-  map = new google.maps.Map(
-      document.getElementById('map'), {center: santoAndre, zoom: 15});
-
-  
-    let request = {
-    query: 'Rua Coronel Francisco Amaro',
-    fields: ['name', 'geometry'],
-  };
-
-  let service = new google.maps.places.PlacesService(map);
-
-  service.findPlaceFromQuery(request, function(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (let i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
-      map.setCenter(results[0].geometry.location);
-    }
-  });
-}
-
-
-function createMarker(place) {
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, search);
-  });
-}
-
-let local = getElementById('local')
-cep.addEventListener("focusout", () =>{
-createMarker(local)
-})
-
-</script>
-
-</head>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:  rgb(228, 83, 17)">
-		<a class="navbar-brand" href="#"></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#fale-conosco">Fale Conosco</a>
-				</li>
-			</ul>
-			</div>
-	</nav>
+	<div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper orange darken-3">
+            <a href="#!" class="brand-logo"></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#cade-meu-pet">Como funciona?</a></li>
+              <li><a href="index.html#fale-conosco">Fale Conosco</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
 	<header class="header" id="home">
 		<div class="container">
 			<div class="card mb-3">
-				<img src="./img/banner.png" class="card-img-top" alt="banner">
+				<img src="./img/banner2.png" class="card-img-top" alt="banner">
 
 				<div class="card-body">
 
 					<h3 class="card-text">Perdeu ou encontrou um Pet? Aqui você tem a chance de encontra-lo ou então de
 						ajudar alguém que está
 						procurando um Pet que se perdeu.</h3>
-					<a type="button" class="btn btn-dark btn-lg" style="background-color:  rgb(228, 83, 17)"
-						href="#cade-meu-pet">Saiba como!</a>
+					<a class="btn waves-effect orange darken-3" type="submit" name="action"href="#cade-meu-pet">
+							<i class="material-icons center">Saiba Como</i>
+						</a>
+				</form>
 				</div>
 			</div>
 
@@ -152,7 +56,7 @@ createMarker(local)
 		<section class="formulario container" id="login-cadastro">
 			<div class="container">
 				<div class="card-body">
-					<h3 class="card-text">Login </h3>
+					<h4 class="card-text">Login </h4>
 					<form>
 						<div class="col-7">
 							<div class="form-group">
@@ -165,12 +69,10 @@ createMarker(local)
 								<input type="password" class="form-control" id="exampleInputPassword1"
 									placeholder="Senha">
 							</div>
-							<div class="form-group form-check">
-								<input type="checkbox" class="form-check-input" id="exampleCheck1">
-								<label class="form-check-label" for="exampleCheck1">Salvar meus dados</label>
-							</div>
-							<button type="button" class="btn btn-dark btn-lg"
-								style="background-color:  rgb(228, 83, 17)">Entrar</button>
+							
+							<button class="btn waves-effect orange darken-3" type="submit" name="action">
+								<i class="material-icons center">Entrar</i>
+							  </button>
 					</form>
 				</div>
 			</div>
@@ -179,8 +81,8 @@ createMarker(local)
 
 			<div class="card-body">
 				
-				<h3 class="card-text">Cadastre-se </h3>
-
+				<h4 class="card-text">Cadastre-se </h4>
+				
 				<form>
 					<div class="col-7">
 						<div class="form-group">
@@ -197,12 +99,11 @@ createMarker(local)
 							<label for="exampleInputPassword1">Senha</label>
 							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
 						</div>
-						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="exampleCheck1">
-							<label class="form-check-label" for="exampleCheck1">Salvar meus dados</label>
-						</div>
-						<button type="button" class="btn btn-dark btn-lg" style="background-color:  rgb(228, 83, 17)"
-							href="#cade-meu-pet">Cadastrar!</button>
+						
+						<button class="btn waves-effect orange darken-3" type="submit" name="action">
+							<i class="material-icons center">Cadastrar</i>
+						  </button>
+				</form>
 				</form>
 			</div>
 
@@ -212,8 +113,6 @@ createMarker(local)
 
 		<section class="pet container" id="cade-meu-pet">
 			<div class="card mb-3">
-				<img src="./img/banner.png" class="card-img-top" alt="banner">
-
 				<div class="card-body">
 					<h2 class="card-text">Como funciona?</h2>
 					<h5 class="card-text">O Cadê meu Pet? é uma plataforma de busca de animais perdidos e
@@ -222,10 +121,12 @@ createMarker(local)
 						resultados de busca em nosso banco de dados. Nossas buscam levam em conta todas as
 						informações
 						fornecidas, incluindo localização e imagens.</h5>
-					<a type="button" class="btn btn-dark btn-lg" style="background-color:  rgb(228, 83, 17)"
-						href="#perdi">Cadê meu Pet?</a>
-					<a type="button" class="btn btn-dark btn-lg" style="background-color:  rgb(228, 83, 17)"
-						href="#encontrei">Encontrei um Pet!</a>
+						<a class="btn waves-effect orange darken-3" type="submit" name="action"href="perdi.html">
+							<i class="material-icons center">Cadê meu Pet?</i>
+						</a>
+						<a class="btn waves-effect orange darken-3" type="submit" name="action"href="encontrei.html">
+							<i class="material-icons center">Encontrei um Pet!</i>
+						</a>
 				</div>
 			</div>
 
@@ -233,129 +134,9 @@ createMarker(local)
 
 		</section>
 
-		<section id="perdi">
-			<div class="container">
-				<div class="card mb-3">
-					<img src="./img/banner.png" class="card-img-top" alt="banner">
-
-					<div class="card-body">
-						<!-- <h2 class="card-title">Perdeu ou encontrou um Pet?</h2> -->
-						<h2 class="card-text">Perdeu seu Pet?</h2>
-						<h3 class="card-text">Preencha o formulário com todas as informações sobre seu Pet, incluindo
-							uma foto e clique em buscar! </h3>
-						<div class="card-body">
-							<!-- <h2 class="card-title">Perdeu ou encontrou um Pet?</h2> -->
-							<h3 class="card-text">Cadê meu Pet?</h3>
-
-							<form>
-								<div class="col-7">
-									<div class="form-group">
-										<label for="formGroupExampleInput">Nome do Pet</label>
-										<input type="text" class="form-control" id="nomePet"
-											placeholder="Nome do seu Pet">
-										<label for="form-check-input">Espécie do Pet</label>
-										<input type="text" class="form-control" id="especiePet"
-											placeholder="Seu Pet é um cahorro, um gato ou outra espécie de animal?">
-										<label for="formGroupExampleInput">Raça</label>
-										<input type="text" class="form-control" id="racaPet"
-											placeholder="Qual a raça do seu Pet?">
-										<label for="form-check-input">Gênero do Pet</label>
-										<input type="text" class="form-control" id="generoPet"
-											placeholder="Seu Pet é macho ou fêmea?">
-										<label for="exampleInputEmail1">Idade do Pet</label>
-										<input type="text" class="form-control" id="idadePet"
-											placeholder="Qual a idade do seu Pet?">
-										<label for="exampleInputEmail1">Cor do Pet</label>
-										<input type="text" class="form-control" id="corPet"
-											placeholder="Qual a cor do seu Pet?">
-									</div>
-									<div class="form-group">
-										<label for="exampleInputPassword1">Outras Características do meu Pet</label>
-										<input type="text" class="form-control" id="caracteristicasPet"
-											placeholder="Características do seu Pet que podem ajudar a encontra-lo.">
-									</div>
-									<div class="form-group">
-										<label for="exampleFormControlFile1">Foto do seu Pet</label>
-										<input type="file" class="form-control-file" id="fotoPet">
-									</div>
-									<p>Data que o Pet foi visto pela última vez: <input type="text" id="calendario2" />
-									</p>
-									<button type="button" class="btn btn-dark btn-lg"
-										style="background-color:  rgb(228, 83, 17)"
-										href="#cade-meu-pet" id="botaoPerdi">Enviar!</button>
-							</form>
-						</div>
 
 
-
-
-					</div>
-				</div>
-		</section>
-
-
-		<div id="map"></div>
-
-		<section id="encontrei">
-			<div class="container">
-				<div class="card mb-3">
-					<img src="./img/banner.png" class="card-img-top" alt="banner">
-
-					<div class="card-body">
-						<h2 class="card-text">Encontrou um Pet?</h2>
-						<h3 class="card-text">Preencha o formulário com todas as informações sobre o Pet encontrado, não
-							se esqueça de enviar uma foto!</h3>
-						<div class="card-body">
-
-							<form>
-
-								<div class="col-7">
-									<div class="form-group">
-										<label for="form-check-input">Espécie do Pet Encontrado</label>
-										<input type="text" class="form-control" id="especiePetEncontrado"
-											placeholder="O Pet encontrado é um cahorro, um gato ou outra espécie de animal?">
-										<label for="formGroupExampleInput">Raça do Pet Encontrado</label>
-										<input type="text" class="form-control" id="racaPetEncontrado"
-											placeholder="Qual a raça do Pet que você encontrou?">
-										<label for="formGroupExampleInput">Gênero do Pet Encontrado</label>
-										<input type="text" class="form-control" id="generoPetEncontrado"
-											placeholder="O Pet encontrado é fêmea ou macho">
-										<label for="formGroupExampleInput">Idade Aparente do Pet</label>
-										<input type="text" class="form-control" id="idadePetEncontrado"
-											aria-describedby="emailHelp"
-											placeholder="Qual idade o Pet que você encontrou parece ter?">
-										<label for="formGroupExampleInput">Cor do Pet Encontrado</label>
-										<input type="text" class="form-control" id="corPetEncontrado"
-											aria-describedby="emailHelp"
-											placeholder="Qual a cor do Pet que você encontrou?">
-									</div>
-									<div class="form-group">
-										<label for="formGroupExampleInput">Outras Características sobre o Pet
-											Encontrado</label>
-										<input type="text" class="form-control" id="caracteristicasPetEncontrado"
-											placeholder="Características do Pet que você encontrou">
-									</div>
-									<div class="form-group">
-										<label for="exampleFormControlFile1">Foto do Pet Encontrado</label>
-										<input type="file" class="form-control-file" id="fotoPetEncontrado">
-									</div>
-									<p>Data em que o Pet foi encontrado: <input type="text" id="calendario" /></p>
-									<label for="exampleFormControlFile1">Local em que o Pet foi Encontrado</label>
-									<input type="text" class="form-control-file" id="localPetEncontrado">
-									
-									<div id="map"></div>
-
-									<button type="button" class="btn btn-dark btn-lg"
-										style="background-color:  rgb(228, 83, 17)"
-										href="#cade-meu-pet" id="botaoEncontrei">Enviar!</button>
-							</form>
-						</div>
-
-					</div>
-				</div>
-		</section>
-
-
+		
 
 
 
@@ -376,9 +157,9 @@ createMarker(local)
 									aria-describedby="emailHelp" placeholder="Coloque seu email">
 								<label for="exampleFormControlTextarea1">Mensagem</label>
 								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-								<button type="button" class="btn btn-dark btn-lg"
-									style="background-color:  rgb(228, 83, 17)" href="#cade-meu-pet"
-									placeholder="Escreva sua mensagem">Enviar!</button>
+								<button class="btn waves-effect orange darken-3" type="submit" name="action">
+									<i class="material-icons center">Enviar!</i>
+								  </button>
 							</div>
 						</div>
 					</form>
@@ -391,7 +172,8 @@ createMarker(local)
 
 
 
-			<script src="./js/script.js"></script>
+			
+			
 			</div>
 			</div>
 

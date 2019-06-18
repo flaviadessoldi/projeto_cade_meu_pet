@@ -11,7 +11,7 @@ servidor.use(bodyParser.json())
 servidor.get("/cademeupet", async (request, response)=>{
     // response.send(controller.getAll())
     controller.getAll()
-    .then(pet => response.send(cademeupet))
+    .then(pet => response.send(pet))
 })
 
 servidor.get('/cademeupet/:id', (request, response) => {
@@ -39,7 +39,6 @@ servidor.post('/cademeupet', (request, response) => {
     const _id = pet._id
     response.send(_id)
   })
-
   .catch(error => {
     if(error.name === "ValidationError"){
       response.sendStatus(400) // bad request
@@ -49,6 +48,25 @@ servidor.post('/cademeupet', (request, response) => {
   })
 
 })
+
+
+servidor.post('/cademeupet/encontrei', (request, response) => {
+  controller.add(request.body)
+  .then(pet => {
+    const _id = pet._id
+    response.send(_id)
+  })
+  .catch(error => {
+    if(error.name === "ValidationError"){
+      response.sendStatus(400) // bad request
+    } else {
+      response.sendStatus(500)
+    }
+  })
+
+})
+
+
 
 servidor.delete('/cademeupet/:id',  (request, response) => {
   controller.remove(request.params.id)

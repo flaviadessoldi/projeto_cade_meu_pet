@@ -10,193 +10,167 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	</head>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
 
 <body>
 	<div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper orange darken-3">
-            <a href="#!" class="brand-logo"></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#cade-meu-pet">Como funciona?</a></li>
-              <li><a href="index.html#fale-conosco">Fale Conosco</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+			<nav class="nav-extended">
+					<div class="nav-wrapper orange darken-3">
+				<img src="./img/Prancheta 4 cópia.png" class="brand-logo" />
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="index.html#cade-meu-pet">Como funciona?</a></li>
+					<li><a href="index.html#fale-conosco">Fale Conosco</a></li>
+				</ul>
+				<div class="nav-content">
+			</div>
+		</div>
+		</nav>
+	</div>
 
 	<header class="header" id="home">
 		<div class="container">
-			<div class="card mb-3">
-				<img src="./img/banner2.png" class="card-img-top" alt="banner">
+			<img src="./img/banner2.png" class="card-img-top" alt="banner">
 
-				<div class="card-body">
+			<div class="card-body">
 
-					<h3 class="card-text">Perdeu ou encontrou um Pet? Aqui você tem a chance de encontra-lo ou então de
-						ajudar alguém que está
-						procurando um Pet que se perdeu.</h3>
-					<a class="btn waves-effect orange darken-3" type="submit" name="action"href="#cade-meu-pet">
-							<i class="material-icons center">Saiba Como</i>
-						</a>
+				<h3 class="card-text">Perdeu ou encontrou um Pet? Aqui você tem a chance de encontra-lo ou então
+					de ajudar alguém que está
+					procurando um Pet que se perdeu.</h3>
+				<a class="btn waves-effect orange darken-3" type="submit" name="action" href="#login-cadastro">
+					<i class="material-icons center">Saiba Como</i>
+				</a>
 				</form>
-				</div>
 			</div>
 
 	</header>
-
+	
 	<main>
-
-
+		
 		<section class="formulario container" id="login-cadastro">
+			<div class="row">
+					<div class="col s6">
+							<div class="card-body">
+									<h4 class="card-text">Login </h4>
+									<form>
+										<div class="col-7">
+											<div class="form-group">
+												<label for="exampleInputEmail1">Email</label>
+												<input type="email" class="form-control" id="exampleInputEmail1"
+													aria-describedby="emailHelp" placeholder="Coloque seu email">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword1">Senha</label>
+												<input type="password" class="form-control" id="exampleInputPassword1"
+													placeholder="Senha">
+											</div>
+				
+											<button class="btn waves-effect orange darken-3" type="submit" name="action">
+												<i class="material-icons center">Entrar</i>
+											</button>
+									</form>
+								</div>
+							</div>
+				
+
+					</div>
+					<div class="col s6"><div class="card-body">
+
+							<h4 class="card-text">Cadastre-se </h4>
+			
+							<form>
+								<div class="col-7">
+									<div class="form-group">
+										<label for="formGroupExampleInput">Nome</label>
+										<input type="text" class="form-control" id="formGroupExampleInput"
+											placeholder="Seu nome completo">
+										<label for="formGroupExampleInput">Telefone para contato</label>
+										<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefone">
+										<label for="exampleInputEmail1">Email</label>
+										<input type="email" class="form-control" id="exampleInputEmail1"
+											aria-describedby="emailHelp" placeholder="Coloque seu email">
+										</div>
+										<div class="form-group">
+										<label for="exampleInputPassword1">Senha</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+									</div>
+			
+									<button class="btn waves-effect orange darken-3" type="submit" name="action">
+										<i class="material-icons center">Cadastrar</i>
+									</button>
+								</div>
+							</form>
+						</div>		
+				  </div>
 			<div class="container">
-				<div class="card-body">
-					<h4 class="card-text">Login </h4>
-					<form>
-						<div class="col-7">
-							<div class="form-group">
-								<label for="exampleInputEmail1">Email</label>
-								<input type="email" class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp" placeholder="Coloque seu email">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Senha</label>
-								<input type="password" class="form-control" id="exampleInputPassword1"
-									placeholder="Senha">
-							</div>
-							
-							<button class="btn waves-effect orange darken-3" type="submit" name="action">
-								<i class="material-icons center">Entrar</i>
-							  </button>
-					</form>
-				</div>
+				
+								
+		</section>
+
+		<section class="pet container" id="cade-meu-pet">
+			<div class="card-body">
+				<h3 class="card-text">Como funciona?</h3>
+				<h5 class="card-text">O Cadê meu Pet? é uma plataforma de busca de animais perdidos e
+					cadastramento
+					de animais encontrados. Cadastre-se, preencha as informações a respeito do Pet e confira os
+					resultados de busca em nosso banco de dados. Nossas buscam levam em conta todas as
+					informações
+					fornecidas, incluindo localização e imagens.</h5>
+				<a class="btn waves-effect orange darken-3" type="submit" name="action" href="perdi.html">
+					<i class="material-icons center">Cadê meu Pet?</i>
+				</a>
+				<a class="btn waves-effect orange darken-3" type="submit" name="action" href="encontrei.html">
+					<i class="material-icons center">Encontrei um Pet!</i>
+				</a>
 			</div>
+		</section>
 
+		<!-- <<formulario de contato>> -->
 
+		<section class="formulario container" id="fale-conosco">
 
 			<div class="card-body">
-				
-				<h4 class="card-text">Cadastre-se </h4>
-				
+				<h3 class="card-text">Fale Conosco!</h3>
 				<form>
 					<div class="col-7">
 						<div class="form-group">
 							<label for="formGroupExampleInput">Nome</label>
 							<input type="text" class="form-control" id="formGroupExampleInput"
 								placeholder="Seu nome completo">
-							<label for="formGroupExampleInput">Telefone para contato</label>
-							<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefone">
 							<label for="exampleInputEmail1">Email</label>
 							<input type="email" class="form-control" id="exampleInputEmail1"
 								aria-describedby="emailHelp" placeholder="Coloque seu email">
+							<label for="exampleFormControlTextarea1">Mensagem</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							<button class="btn waves-effect orange darken-3" type="submit" name="action">
+								<i class="material-icons center">Enviar!</i>
+							</button>
 						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">Senha</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-						</div>
-						
-						<button class="btn waves-effect orange darken-3" type="submit" name="action">
-							<i class="material-icons center">Cadastrar</i>
-						  </button>
-				</form>
+					</div>
 				</form>
 			</div>
-
-
-
-		</section>
-
-		<section class="pet container" id="cade-meu-pet">
-			<div class="card mb-3">
-				<div class="card-body">
-					<h2 class="card-text">Como funciona?</h2>
-					<h5 class="card-text">O Cadê meu Pet? é uma plataforma de busca de animais perdidos e
-						cadastramento
-						de animais encontrados. Cadastre-se, preencha as informações a respeito do Pet e confira os
-						resultados de busca em nosso banco de dados. Nossas buscam levam em conta todas as
-						informações
-						fornecidas, incluindo localização e imagens.</h5>
-						<a class="btn waves-effect orange darken-3" type="submit" name="action"href="perdi.html">
-							<i class="material-icons center">Cadê meu Pet?</i>
-						</a>
-						<a class="btn waves-effect orange darken-3" type="submit" name="action"href="encontrei.html">
-							<i class="material-icons center">Encontrei um Pet!</i>
-						</a>
-				</div>
-			</div>
-
-			</div>
-
-		</section>
-
-
-
-		
-
-
-
-		<!-- <<formulario de contato>> -->
-
-		<section class="formulario container" id="fale-conosco">
-			<div class="card">
-				<div class="card-body">
-					<h1 class="card-text">Fale Conosco!</h1>
-					<form>
-						<div class="col-7">
-							<div class="form-group">
-								<label for="formGroupExampleInput">Nome</label>
-								<input type="text" class="form-control" id="formGroupExampleInput"
-									placeholder="Seu nome completo">
-								<label for="exampleInputEmail1">Email</label>
-								<input type="email" class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp" placeholder="Coloque seu email">
-								<label for="exampleFormControlTextarea1">Mensagem</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-								<button class="btn waves-effect orange darken-3" type="submit" name="action">
-									<i class="material-icons center">Enviar!</i>
-								  </button>
-							</div>
-						</div>
-					</form>
-				</div>
-
-			</div>
-
-
-
-
-
-
-			
-			
-			</div>
-			</div>
-
 
 		</section>
 	</main>
 
 
+
+	</div>
+
 	<!-- <<rodape>> -->
-
-	<footer class="rodape">
-		<div class="rodape__principal">
-			<ul class="rodape__navegacao">
-				<li>
-					<a href="index.html">Home</a>
-				</li>
-			</ul>
-
-		</div>
-		<div class="rodape__cc">
-			<p>Creative Commons 2019 | Desenvolvido por Flávia Dessoldi </p>
+	<footer class="page-footer orange darken-3">
+		<div class="footer-copyright">
+			<div class="container">
+				Creative Commons 2019 | Desenvolvido por Flávia Dessoldi
+			</div>
 		</div>
 	</footer>
+
 
 </body>
 

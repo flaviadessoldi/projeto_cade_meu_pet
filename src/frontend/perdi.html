@@ -68,8 +68,7 @@
       </div>
 
     <div class="container">
-        <div class="card mb-3">
-            <img src="./img/banner2.png" class="card-img-top" alt="banner">
+         <img src="./img/banner2.png" class="card-img-top" alt="banner">
 
             <div class="card-body">
                 <h2 class="card-text">Perdeu seu Pet?</h2>
@@ -104,7 +103,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto do seu Pet</label>
-                                <input type="file" class="form-control-file" id="fotoPet">
+                                <div class="file-field input-field">
+                                        <div class="btn orange darken-3">
+                                          <span>Foto</span>
+                                          <input type="file">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                          <input class="file-path validate" id="fotoPet" type="text">
+                                        </div>
+                                      </div>
                             </div>
                             <label>Data em que o Pet foi visto pela última vez: <input type="text" id="calendario2" placeholder="Data em que seu Pet foi visto pela última vez"/>
                             </label>
@@ -116,8 +123,8 @@
                                         <input type="text" id="localPet" name="txtEndereco" />
                                     </div>
                                     <div>
-                                        <input type="button" id="btnEndereco" name="btnEndereco"
-                                            value="Mostrar no mapa" />
+                                        <!-- <input type="button" id="btnEndereco" name="btnEndereco"
+                                            value="Mostrar no mapa" /> -->
                                     </div>
 
                                     <div id="mapa" style="height: 500px; width: 500px">
@@ -133,7 +140,7 @@
                           </button>
                 </div>
             </div>
-        </div>
+        
         <script src="../mapa.js"></script>
     </body>
     </html>

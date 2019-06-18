@@ -69,8 +69,7 @@
       </div>
   
         <div class="container">
-            <div class="card mb-3">
-                <img src="./img/banner2.png" class="card-img-top" alt="banner">
+            <img src="./img/banner2.png" class="card-img-top" alt="banner">
 
                 <div class="card-body">
                     <h3 class="card-text">Encontrou um Pet?</h3>
@@ -107,7 +106,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Foto do Pet Encontrado</label>
-                                    <input type="file" class="form-control-file" id="fotoPetEncontrado">
+                                    <div class="file-field input-field">
+                                            <div class="btn orange darken-3">
+                                              <span>Foto</span>
+                                              <input type="file">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                              <input class="file-path validate" id="fotoPetEncontrado" type="text">
+                                            </div>
+                                          </div>
                                 </div>
                                 <p>Data em que o Pet foi encontrado: <input type="text" id="calendario" /></p>
                                 <form method="post" action="" id="">   
@@ -118,7 +125,7 @@
                                             <input type="text" id="localPetEncontrado" name="txtEndereco" />
                                         </div>
                                         <div>
-                                            <input type="button" id="btnEndereco2" name="btnEndereco" value="Mostrar no mapa" />
+                                             <!-- <input type="button" class="btn waves-effect orange darken-3" id="btnEndereco2" name="btnEndereco" value="Mostrar no mapa" /> -->
                                         </div>
                                  
                                         <div id="mapa2" style="height: 500px; width: 500px">
@@ -132,7 +139,7 @@
                             <button class="btn waves-effect orange darken-3" type="submit" name="action">
                                 <i class="material-icons center">Enviar!</i>
                               </button>
-                    </div>
+                   
 
                 </div>
             </div>

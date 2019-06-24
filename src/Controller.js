@@ -38,7 +38,7 @@ const compararPets = async (id1,id2)=>{
   const genero = await petModel.find(genero)
   const cor = await petModel.find(cor)
   const local = await petModel.find(local)
-if(especie.id1 === especie.id2 && genero.id1 ===genero.id2){
+  if(especie.id1 === especie.id2 && genero.id1 ===genero.id2){
   if(cor.id1=== cor.id2 && local.id1===local.id2){
     
     return id1,id2

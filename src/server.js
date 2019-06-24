@@ -33,6 +33,30 @@ servidor.get('/cademeupet/:id', (request, response) => {
     })
 })
 
+
+
+servidor.get ('/cademeupet/resultados', (request, response) => {
+  
+ const body = request.body
+ controller.compararPets(request.body)
+
+    .then(pet => {
+      if(!pet) { response.sendStatus('Ainda não foi cadastrado nenhum animal com essas informações!') }
+      
+    })
+    .catch(error => {
+      if(error.name === "MongoError" || error.name === "CastError"){
+        response.sendStatus(400)
+      } else {
+        response.sendStatus(500)
+      }
+    })
+
+  
+})
+
+
+
 servidor.post('/cademeupet', (request, response) => {
   controller.add(request.body)
   .then(pet => {

@@ -11,11 +11,11 @@ fetch(`http://localhost:3000/cademeupet`)
       const mediaItem = document.createElement('div');
       mediaItem.setAttribute('class', 'card-body');
       mediaItem.innerHTML = `
-      <img src="${pet.foto}" alt="${pet.nome}" class="mr-3 img-thumbnail" width="200px">
+      <img src="${pet.foto}" alt="${pet.nome}" class="circle responsive-img">
 
-      <div class="media-body>
+      <div class="media-body">
 
-          <h5 class="mt-0"><strong>${prato.nome}</strong></h5>
+          <h5 class="mt-0"><strong>${pet.nome}</strong></h5>
           ${prato.descricao}
         </div>`
         container.appendChild(mediaItem);

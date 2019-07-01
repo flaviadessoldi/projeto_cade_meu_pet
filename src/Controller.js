@@ -15,37 +15,20 @@ const getById = (id) => {
   return petModel.findById(id) 
 }
 
+// const compararPets = async (id1,id2)=>{
 
- const add = (pet) => {
-  const novoPet = new petModel({
-    nome:pet.nome,
-    especie: pet.especie,
-    genero: pet.genero,
-    idade:pet.idade,
-    cor: pet.cor,
-    outrasCaracteristicas: pet.outrasCaracteristicas,
-    foto:pet.foto,
-    data: pet.data,
-    local:pet.local
-  
-  })
-  
-  novoPet.save()
-}
 
-const compararPets = async (id1,id2)=>{
-  const especie = await petModel.find(especie)
-  const genero = await petModel.find(genero)
-  const cor = await petModel.find(cor)
-  const local = await petModel.find(local)
-  if(especie.id1 === especie.id2 && genero.id1 ===genero.id2){
-  if(cor.id1=== cor.id2 && local.id1===local.id2){
+//   const especie = await petModel.find(especie)
+//   const genero = await petModel.find(genero)
+//   const cor = await petModel.find(cor)
+//   const local = await petModel.find(local)
+//   if(especie.id1 === especie.id2 || genero.id1 ===genero.id2){
+//   if(cor.id1=== cor.id2 || local.id1===local.id2){
     
-    return id1,id2
-  }
- }
-}
-
+//     return id1,id2
+//   }
+//  }
+// }
 
 const remove = (id)=>{
   return petModel.findByIdAndDelete(id)
@@ -68,7 +51,7 @@ const change = (id, alteracao)=>{
             let nome = () => {pet.nome = alteracao.nome}
             let especie = ()=> {pet.especie = alteracao.especie}
            let genero= ()=> {pet.genero = alteracao.genero}
-    let idade=()=> {pet.idade =alteracao.idade}
+    let porte=()=> {pet.porte =alteracao.porte}
     let cor= ()=> {pet.cor= alteracao.cor}
     let outrasCaracteristicas= ()=> { pet.outrasCaracteristicas= alteracao.outrasCaracteristicas}
     let foto=()=> {pet.foto= alteracao.foto}
@@ -80,6 +63,6 @@ const change = (id, alteracao)=>{
     })
 }
 
-module.exports = {getAll, add, remove, change, update, getById, compararPets}
+module.exports = {getAll, remove, change, update, getById }
 
 

@@ -1,11 +1,9 @@
+require('dotenv-safe').load()
 const mongoose = require("mongoose")
-//string de conexao
-//mongodb://dominio:porta/nome_database
-const MONGO_URL = "mongodb://localhost:27017/cademeupet"
+const MONGO_URL = process.env.MONGODB_URI
 
 
 function connect(){
-    //TODO: conectar no nosso mongo usando a MONGO_URL
     mongoose.connect(MONGO_URL, 
         {useNewUrlParser: true},
      function(error){
@@ -17,7 +15,5 @@ function connect(){
     } 
   )
 }
-
-
 
 module.exports={connect}

@@ -3,7 +3,6 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const servidor = express()
 const usuariosController = require('./UsuarioController')
-const petController = require('./Controller')
 const PORT = process.env.PORT || 3000
 const jwt = require('jsonwebtoken')
 const logger = (request, response, next) => {
@@ -21,24 +20,7 @@ servidor.use(bodyParser.json())
 servidor.use(logger)
 
 
-// servidor.get ('/cademeupet/resultados', (request, response) => {
-//  const body = request.body
-//  controller.compararPets(request.body)
 
-//     .then(pet => {
-//       if(!pet) { response.sendStatus('Ainda não foi cadastrado nenhum animal com essas informações!') }
-      
-//     })
-//     .catch(error => {
-//       if(error.name === "MongoError" || error.name === "CastError"){
-//         response.sendStatus(400)
-//       } else {
-//         response.sendStatus(500)
-//       }
-//    })
-// })
-
-  
 servidor.get('/usuarios', async (request, response) => {
   const authHeader = request.get('authorization')
   let auth = false
@@ -130,6 +112,15 @@ servidor.post('/usuarios/adicionar-pet/:usuarioId', (request, response) => {
         response.sendStatus(500)
       }
     })
+  })
+
+  servidor.get('usuarios/:usuarioId/pet-encontrado', async (request, response)=>{
+    const usuarioId = request.params.usuarioId
+    const petUsuario = usuariosController.getPets(usuarioId)
+    petUsuario.findPet(petUsuario)
+    .then(pets => {
+      response.send(pets)  
+  })
 })
 
 

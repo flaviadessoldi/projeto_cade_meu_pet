@@ -71,12 +71,10 @@ const addPet = async (usuarioId, pet) => {
   return usuario.save()
 }
 
-const findPet = async (novoPet) => {
-  const buscaPet = await novoPet.find({ especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor })
-  if (buscaPet) {
-    return console.log(buscaPet)
-  }
-}
+const findPet = async (petId) => { 
+  const pet = await getById(petId)
+  return petModel.find({ especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }) //usa o seu Model pra fazer o find
+ }
 
 const login = async (dadosDoLogin) => {
   const usuarioCadastrado = await usuariosModel.findOne(

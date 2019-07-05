@@ -114,12 +114,13 @@ servidor.post('/usuarios/adicionar-pet/:usuarioId', (request, response) => {
     })
   })
 
-  servidor.get('usuarios/:usuarioId/pet-encontrado', async (request, response)=>{
-    const usuarioId = request.params.usuarioId
-    const petUsuario = usuariosController.getPets(usuarioId)
-    petUsuario.findPet(petUsuario)
-    .then(pets => {
-      response.send(pets)  
+  servidor.post('usuarios/:usuarioId/:petId/pet-encontrado', async (request, response)=>{
+    const usuarioId = request.params.usuarioId // nao precisa do await
+    const petUsuario = await usuariosController.getByPetId(usuarioId)
+     
+    findPet(petUsuario) //remove o petUsuario dessa linha
+    .then(pet => {
+      response.send(pet)  
   })
 })
 
@@ -155,7 +156,8 @@ servidor.get('/usuarios/:usuarioId/pets/:petId', (request, response) => {
       if(!pet){
         response.sendStatus(404)
       } else {
-        response.send(pet)
+        pet = response.send(pet)
+        pet.findPet(petId)
       }
     })
     .catch(error => {

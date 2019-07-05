@@ -44,7 +44,7 @@
     </script>
 
     <script type="text/javascript"
-        src="http://maps.googleapis.com/maps/api/js?key=&amp;"></script>
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBanDmzeN2egvGO-TzZkrrFa9dDNOhavhU&amp;"></script>
 
    
 
@@ -75,7 +75,7 @@
 
 
         <main>
-    <div class="container">
+    <div class="container" id="cadastroPet">
          <div class="card-body">
                 <div class="col s12 m8 offset-m2 l6 offset-l3">
                        
@@ -87,37 +87,37 @@
                         </div>
                       </div>
                 
-                <h4 class="card-text center">Preencha o formulário com todas as informações sobre seu Pet, incluindo
+                <h4 class="card-text center">Preencha o formulário com todas as informações sobre o Pet, incluindo
                     uma foto e clique em enviar! </h4>
                 <div class="card-body">
                     <form>
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Nome do Pet</label>
-                                <input type="text" class="form-control" id="nomePet" placeholder="Nome do seu Pet">
+                                <input type="text" class="form-control" id="nomePet" placeholder="Escreva o nome do Pet ou se ele tem alguma identifcação de nome. Se não tiver, basta deixar este campo em branco.">
                                 <label for="form-check-input">Espécie do Pet</label>
                                 <input type="text" class="form-control" id="especiePet"
-                                    placeholder="Seu Pet é um cahorro, um gato ou outra espécie de animal?">
+                                    placeholder="O Pet é um cahorro, um gato ou outra espécie de animal?">
                                 <label for="formGroupExampleInput">Raça</label>
                                 <input type="text" class="form-control" id="racaPet"
-                                    placeholder="Qual a raça do seu Pet?">
+                                    placeholder="Qual a raça do Pet? Se não tiver ou souber, preencha como SRD">
                                 <label for="form-check-input">Gênero do Pet</label>
                                 <input type="text" class="form-control" id="generoPet"
-                                    placeholder="Seu Pet é macho ou fêmea?">
-                                <label for="exampleInputEmail1">Idade do Pet</label>
-                                <input type="text" class="form-control" id="idadePet"
-                                    placeholder="Qual a idade do seu Pet?">
-                                <label for="exampleInputEmail1">Cor do Pet</label>
+                                    placeholder="O Pet é macho ou fêmea?">
+                                <label for="exampleInputEmail1">Porte do Pet</label>
+                                <input type="text" class="form-control" id="portePet"
+                                    placeholder="Qual o porte do Pet?">
+                                <label for="exampleInputEmail1">Cor do Pêlo</label>
                                 <input type="text" class="form-control" id="corPet"
-                                    placeholder="Qual a cor do seu Pet?">
+                                    placeholder="Qual a cor do pêlo do Pet?">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Outras Características do meu Pet</label>
+                                <label for="exampleInputPassword1">Outras Características do Pet</label>
                                 <input type="text" class="form-control" id="caracteristicasPet"
-                                    placeholder="Características do seu Pet que podem ajudar a encontra-lo.">
+                                    placeholder="Características do Pet que são úteis e importantes.">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Foto do seu Pet</label>
+                                <label for="exampleFormControlFile1">Foto do Pet</label>
                                 <div class="file-field input-field">
                                         <div class="btn orange darken-3">
                                           <span>Foto</span>
@@ -151,7 +151,7 @@
                             </form>
                         </form>
                         <div class="card-body center">
-                        <button class="btn-large waves-effect orange darken-3" type="submit" name="action">
+                        <button class="btn-large waves-effect orange darken-3" id="botaoPet" type="submit" name="action">
                             <i class="material-icons center">Enviar!</i>
                           </button>
                           </div>

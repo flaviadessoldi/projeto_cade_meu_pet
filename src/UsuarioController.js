@@ -71,10 +71,32 @@ const addPet = async (usuarioId, pet) => {
   return usuario.save()
 }
 
-const findPet = async (petId) => { 
-  const pet = await getById(petId)
-  return petModel.find({ especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }) //usa o seu Model pra fazer o find
- }
+// PARA BUSCAR SE EXISTE ALGUM PET CADATSRADO COM AS MESMAS CARACTERISTICAS
+
+const findPet = async (usuarioId) => { 
+  const usuario = await getById(usuarioId)
+  const pet = usuario.pets
+  if (pets){
+  const petEncontrado = petModel.find({ especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }) //usa o seu Model pra fazer o find
+    return petEncontrado
+} else{
+  console.log('não foram encontrados pets com essas caracteristicas')
+}
+  }
+
+// const petFinder = async (pet) => {
+//   const petCadastrado = await petModel.find(
+//     {especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }
+//   )
+
+//   if (petCadastrado) {
+//     return petCadastrado
+//     } else {
+//       console.log('Não há animais cadastrados com essa caracteristica')
+//     }
+//   }
+  
+
 
 const login = async (dadosDoLogin) => {
   const usuarioCadastrado = await usuariosModel.findOne(
@@ -104,4 +126,4 @@ const login = async (dadosDoLogin) => {
   }
 }
 
-module.exports = { getAll, getById, add, remove, update, addPet, updatePet, getPets, getByPetId,findPet, login }
+module.exports = { getAll, getById, add, remove, update, addPet, updatePet, getPets, getByPetId,login }

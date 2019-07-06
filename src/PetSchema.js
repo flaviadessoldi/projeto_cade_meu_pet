@@ -9,9 +9,9 @@ const PetSchema = new Schema ({
     porte:{type: String},//opcional
     cor: {type:String},
     outrasCaracteristicas: {type:String},
-    foto:{type:String, required:true},
+    foto:{type:String},
     data: {type: Date, required: true},
-    local:{type: String, required: true}
+    local:{type: String}
 })
 
 const petModel = mongoose.model("pet", PetSchema)

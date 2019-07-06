@@ -29,7 +29,7 @@ servidor.get('/usuarios', async (request, response) => {
     const token = authHeader.split(' ')[1]
     jwt.verify(token, process.env.PRIVATE_KEY, function(error, decoded) {
       if (error) {
-        response.send(403)
+        response.sendStatus(403)
       } else {
         auth = true
       }
@@ -114,17 +114,6 @@ servidor.post('/usuarios/adicionar-pet/:usuarioId', (request, response) => {
     })
   })
 
-  servidor.post('usuarios/:usuarioId/:petId/pet-encontrado', async (request, response)=>{
-    const usuarioId = request.params.usuarioId // nao precisa do await
-    const petUsuario = await usuariosController.getByPetId(usuarioId)
-     
-    findPet(petUsuario) //remove o petUsuario dessa linha
-    .then(pet => {
-      response.send(pet)  
-  })
-})
-
-
 servidor.get('/usuarios/:usuarioId/pets', async (request, response) => {
   const usuarioId = request.params.usuarioId
   usuariosController.getPets(usuarioId)
@@ -184,6 +173,52 @@ servidor.post('/usuarios/login', (request, response) => {
       }
     })
 })
+
+// ROTA PARA ENCONTRAR O PET
+
+servidor.get('usuarios/encontrar-pet/:usuarioId/pet/:petId', async (request, response)=>{
+  const usuarioId = request.params.usuarioId
+const petId = request.params.petId
+usuariosController.getByPetId(usuarioId, petId)
+  .then(pet => {
+    if(!pet){
+      response.sendStatus(404)
+    } else {
+      const petEncontrado = pet.findPet(petId)
+      response.send(petEncontrado)
+     
+    }
+  })
+  .catch(error => {
+    if(error.name === "CastError"){
+      response.sendStatus(400)
+    } else {
+      response.sendStatus(500)
+    }
+  })
+})
+
+// servidor.get('/usuarios/usuarioId/encontrar-pet', (request, response) => {
+//   const usuarioId = request.params.usuarioId
+//   const buscaPet = usuariosController.getByPetId(usuarioId.request.body)
+//   buscaPet.petFinder(petCadastrado)
+//     .then(usuarioCadastrado => {
+//       if(petCadastrado){
+//         return (usuarioCadastrado)
+//       }else{
+//         return console.log('Nenhum pet cadastrado com essas caracteristicas')
+//       }
+//     })
+//     .catch(error => {
+//       if(error.name === "ValidationError"){
+//         console.log(error)
+//         response.sendStatus(400)
+//       } else {
+//         console.log(error)
+//         response.sendStatus(500)
+//       }
+//     })
+// })
   
   servidor.listen(PORT)
     

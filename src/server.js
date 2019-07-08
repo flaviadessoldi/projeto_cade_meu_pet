@@ -198,6 +198,8 @@ usuariosController.getByPetId(usuarioId, petId)
   })
 })
 
+//opção de rota para encontrar o pet
+
 // servidor.get('/usuarios/usuarioId/encontrar-pet', (request, response) => {
 //   const usuarioId = request.params.usuarioId
 //   const buscaPet = usuariosController.getByPetId(usuarioId.request.body)

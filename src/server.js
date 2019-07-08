@@ -176,7 +176,7 @@ servidor.post('/usuarios/login', (request, response) => {
 
 // ROTA PARA ENCONTRAR O PET
 
-servidor.get('usuarios/encontrar-pet/:usuarioId/pet/:petId', async (request, response)=>{
+servidor.get('usuarios/buscar-pet/:usuarioId/pet/:petId', async (request, response)=>{
   const usuarioId = request.params.usuarioId
 const petId = request.params.petId
 usuariosController.getByPetId(usuarioId, petId)

@@ -20,28 +20,10 @@ servidor.use(bodyParser.json())
 servidor.use(logger)
 
 
-
-servidor.get('/usuarios', async (request, response) => {
-  const authHeader = request.get('authorization')
-  let auth = false
-
-  if (authHeader) {
-    const token = authHeader.split(' ')[1]
-    jwt.verify(token, process.env.PRIVATE_KEY, function(error, decoded) {
-      if (error) {
-        response.sendStatus(403)
-      } else {
-        auth = true
-      }
-    })
-  } else {
-    response.send(401)
-  }
-
-  if (auth) {
+servidor.get('/usuarios', (request, response) => {
+ 
     usuariosController.getAll()
     .then(usuarios => response.send(usuarios))
-  }
 })
 
 
@@ -64,6 +46,7 @@ servidor.get('/usuarios/:usuarioId', (request, response) => {
       }
     })
 })
+
 
 servidor.patch('/usuarios/:id', (request, response) => {
   const id = request.params.id
@@ -113,6 +96,7 @@ servidor.post('/usuarios/adicionar-pet/:usuarioId', (request, response) => {
       }
     })
   })
+
 
 servidor.get('/usuarios/:usuarioId/pets', async (request, response) => {
   const usuarioId = request.params.usuarioId
@@ -222,6 +206,8 @@ usuariosController.getByPetId(usuarioId, petId)
 //     })
 // })
   
+
+
   servidor.listen(PORT)
     
   console.log(`Servidor rodando na porta ${PORT}`)

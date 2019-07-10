@@ -13,6 +13,12 @@ const getAll = () => {
   })
 }
 
+const getAllPets = () => {
+  return usuariosModel.find((error, pets) => {
+    return pets
+  })
+}
+
 const getById = (id) => {
   return usuariosModel.findById(id)
 }
@@ -71,6 +77,8 @@ const addPet = async (usuarioId, pet) => {
   return usuario.save()
 }
 
+
+
 // PARA BUSCAR SE EXISTE ALGUM PET CADATSRADO COM AS MESMAS CARACTERISTICAS
 
 const findPet = async (usuarioId) => { 
@@ -126,4 +134,4 @@ const login = async (dadosDoLogin) => {
   }
 }
 
-module.exports = { getAll, getById, add, remove, update, addPet, updatePet, getPets, getByPetId,login }
+module.exports = { getAll,getAllPets, getById, add, remove, update, addPet, updatePet, getPets, getByPetId,login }

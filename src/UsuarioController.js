@@ -81,10 +81,10 @@ const addPet = async (usuarioId, pet) => {
 
 // PARA BUSCAR SE EXISTE ALGUM PET CADATSRADO COM AS MESMAS CARACTERISTICAS
 
-const findPet = async (usuarioId) => { 
-  const usuario = await getById(usuarioId)
-  const pet = usuario.pets
-  if (pets){
+const findPet = async (usuarios) => { 
+  const usuariosPets = await getAllPets(usuarios)
+  
+  if (usuariosPets){
   const petEncontrado = petModel.find({ especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }) //usa o seu Model pra fazer o find
     return petEncontrado
 } else{
@@ -134,4 +134,4 @@ const login = async (dadosDoLogin) => {
   }
 }
 
-module.exports = { getAll,getAllPets, getById, add, remove, update, addPet, updatePet, getPets, getByPetId,login }
+module.exports = { getAll,getAllPets, getById, add, remove, update, addPet, updatePet, getPets, getByPetId,findPet, login }

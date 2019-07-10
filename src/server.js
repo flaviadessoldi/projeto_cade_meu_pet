@@ -158,29 +158,52 @@ servidor.post('/usuarios/login', (request, response) => {
     })
 })
 
+
 // ROTA PARA ENCONTRAR O PET
 
-servidor.get('usuarios/buscar-pet/:usuarioId/pet/:petId', async (request, response)=>{
-  const usuarioId = request.params.usuarioId
-const petId = request.params.petId
-usuariosController.getByPetId(usuarioId, petId)
-  .then(pet => {
-    if(!pet){
-      response.sendStatus(404)
-    } else {
-      const petEncontrado = pet.findPet(petId)
-      response.send(petEncontrado)
-     
+servidor.get('/usuarios/pets',  (request, response) => {
+ 
+  const usuarios = usuariosController.getAllPets()
+   
+  .then(pets => {
+    if (pets){   
+    const petEncontrado = petFinder(usuarios)
+    response.send(petEncontrado)
     }
   })
+
   .catch(error => {
-    if(error.name === "CastError"){
+    if(error.name === "ValidationError"){
+      console.log(error)
       response.sendStatus(400)
     } else {
+      console.log(error)
       response.sendStatus(500)
     }
   })
 })
+
+// servidor.get('usuarios/buscar-pet/:usuarioId/pet/:petId', async (request, response)=>{
+//   const usuarioId = request.params.usuarioId
+// const petId = request.params.petId
+// usuariosController.getByPetId(usuarioId, petId)
+//   .then(pet => {
+//     if(!pet){
+//       response.sendStatus(404)
+//     } else {
+//       const petEncontrado = pet.findPet(petId)
+//       response.send(petEncontrado)
+     
+//     }
+//   })
+//   .catch(error => {
+//     if(error.name === "CastError"){
+//       response.sendStatus(400)
+//     } else {
+//       response.sendStatus(500)
+//     }
+//   })
+// })
 
 //opção de rota para encontrar o pet
 

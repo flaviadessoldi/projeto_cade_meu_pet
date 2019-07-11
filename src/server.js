@@ -64,6 +64,8 @@ servidor.patch('/usuarios/:id', (request, response) => {
     })
 })
 
+//Cadastrar um usuário
+
 servidor.post('/usuarios', (request, response) => {
   usuariosController.add(request.body)
     .then(usuario=> {
@@ -80,12 +82,16 @@ servidor.post('/usuarios', (request, response) => {
     })
 })
 
+//Adicionar um Pet ao Usuario
+
 servidor.post('/usuarios/adicionar-pet/:usuarioId', (request, response) => {
   const usuarioId = request.params.usuarioId
   usuariosController.addPet(usuarioId, request.body)
-    .then(usuario => {
-      const _id = usuario._id
-      response.send(_id)
+  
+    .then(pet => {
+      
+      response.send(pet)
+      
     })
     .catch(error => {
       if(error.name === "ValidationError"){
@@ -161,14 +167,28 @@ servidor.post('/usuarios/login', (request, response) => {
 
 // ROTA PARA ENCONTRAR O PET
 
-servidor.get('/usuarios/pets',  (request, response) => {
- 
-  const usuarios = usuariosController.getAllPets()
+servidor.get('/busca/pets',  (request, response) => {
+ // fetch pra /usuarios/pets/?nome=huahuauh&cor=rosa&
+  const especie = request.query.especie
+  const genero = request.query.genero
+  const raca = request.query.raca
+  const cor = request.query.cor
+  const local = request.query.local
+  const pet = {
+    especie,
+    genero,
+    raca,
+    cor,
+    local
+  }
+
+  usuariosController.getAllPets(pet)
    
   .then(pets => {
+    console.log(pets)
     if (pets){   
-    const petEncontrado = petFinder(usuarios)
-    response.send(petEncontrado)
+   
+    response.send(pets)
     }
   })
 
@@ -183,51 +203,6 @@ servidor.get('/usuarios/pets',  (request, response) => {
   })
 })
 
-// servidor.get('usuarios/buscar-pet/:usuarioId/pet/:petId', async (request, response)=>{
-//   const usuarioId = request.params.usuarioId
-// const petId = request.params.petId
-// usuariosController.getByPetId(usuarioId, petId)
-//   .then(pet => {
-//     if(!pet){
-//       response.sendStatus(404)
-//     } else {
-//       const petEncontrado = pet.findPet(petId)
-//       response.send(petEncontrado)
-     
-//     }
-//   })
-//   .catch(error => {
-//     if(error.name === "CastError"){
-//       response.sendStatus(400)
-//     } else {
-//       response.sendStatus(500)
-//     }
-//   })
-// })
-
-//opção de rota para encontrar o pet
-
-// servidor.get('/usuarios/usuarioId/encontrar-pet', (request, response) => {
-//   const usuarioId = request.params.usuarioId
-//   const buscaPet = usuariosController.getByPetId(usuarioId.request.body)
-//   buscaPet.petFinder(petCadastrado)
-//     .then(usuarioCadastrado => {
-//       if(petCadastrado){
-//         return (usuarioCadastrado)
-//       }else{
-//         return console.log('Nenhum pet cadastrado com essas caracteristicas')
-//       }
-//     })
-//     .catch(error => {
-//       if(error.name === "ValidationError"){
-//         console.log(error)
-//         response.sendStatus(400)
-//       } else {
-//         console.log(error)
-//         response.sendStatus(500)
-//       }
-//     })
-// })
   
 
 

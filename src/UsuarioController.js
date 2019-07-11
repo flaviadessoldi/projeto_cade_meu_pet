@@ -13,8 +13,8 @@ const getAll = () => {
   })
 }
 
-const getAllPets = () => {
-  return usuariosModel.find((error, pets) => {
+const getAllPets = (pet) => {
+  return usuariosModel.find({'pets.genero':pet.genero},(error, pets) => {
     return pets
   })
 }
@@ -81,29 +81,18 @@ const addPet = async (usuarioId, pet) => {
 
 // PARA BUSCAR SE EXISTE ALGUM PET CADATSRADO COM AS MESMAS CARACTERISTICAS
 
-const findPet = async (usuarios) => { 
-  const usuariosPets = await getAllPets(usuarios)
-  
-  if (usuariosPets){
-  const petEncontrado = petModel.find({ especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }) //usa o seu Model pra fazer o find
-    return petEncontrado
+const findPet = async (pet) => { 
+  const usuariosPets = await getAllPets(pet)
+   if (usuariosPets){
+  usuariosPets.forEach(usuario =>{
+    return usuario
+
+  })
 } else{
   console.log('não foram encontrados pets com essas caracteristicas')
 }
   }
 
-// const petFinder = async (pet) => {
-//   const petCadastrado = await petModel.find(
-//     {especie: pet.especie, genero: pet.genero, porte: pet.porte, cor: pet.cor }
-//   )
-
-//   if (petCadastrado) {
-//     return petCadastrado
-//     } else {
-//       console.log('Não há animais cadastrados com essa caracteristica')
-//     }
-//   }
-  
 
 
 const login = async (dadosDoLogin) => {

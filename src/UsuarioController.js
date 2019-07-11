@@ -14,7 +14,7 @@ const getAll = () => {
 }
 
 const getAllPets = (pet) => {
-  return usuariosModel.find({'pets.genero':pet.genero},(error, pets) => {
+  return usuariosModel.find({'pets.genero':pet.genero}, (error, pets) => {
     return pets
   })
 }

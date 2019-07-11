@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const UsuariosSchema = new Schema({
   _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
   nome: { type: String, required: true },
-  telefone: { type: Number, required: true },
+  telefone: { type: String, required: true },
   email: { type: String, required: true },
   senha:{ type: String, required: true },
   pets: [PetSchema]

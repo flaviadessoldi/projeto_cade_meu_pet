@@ -1,6 +1,6 @@
 require('dotenv-safe').load()
 const mongoose = require("mongoose")
-const MONGO_URL = process.env.MONGODB_URI
+const MONGO_URL = 'mongodb+srv://cademeupet:buscapet@cluster0-vdgqc.mongodb.net/test?retryWrites=true&w=majority'
 
 
 function connect(){

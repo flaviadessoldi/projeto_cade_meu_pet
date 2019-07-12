@@ -9,7 +9,7 @@ const PetSchema = new Schema ({
     cor: {type:String},
     outrasCaracteristicas: {type:String},
     foto:{type:String},
-    data: {type: Date},
+    data: {type: String},
     local:{type: String}
 })
 

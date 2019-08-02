@@ -1,0 +1,26 @@
+PROJETO REALIZADO DURANTE O BOOTCAMP DE BACKEND DA REPROGRAMA.
+
+O CADÊ MEU PET é uma plataforma para buscar animais perdidos ou encontrados.
+Para cadastrar um animal é preciso realizar um cadastro de usuario no site.
+
+Para fazer uma busca, preencha os campos com iformações sobre os animais e clique em BUSCAR!
+
+Os resultados serão exibidos de acordo com as palavras chaves enviadas na busca e localização e data inseridos.
+
+Junto com as informações dos animais que estão cadastrados no banco de dados serão informados os dados de contato do usuario que cadastrou o animal.
+
+PARA INICIAR:
+
+Faça o clone do repositorio e rode o comando npm start no terminal.
+
+
+STACK
+
+O projeto foi realizado com as tecnologias Nodejs, framework expressa, bando de dados MongoDb com mongoose, JavaScript, Jquery e Materialize CSS (front end)
+
+DEPLOY
+
+O deploy foi realizado no Heroku e por ser acessado em:
+
+hhttps://cademeupetapp.herokuapp.com
+
